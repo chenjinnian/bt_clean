@@ -5,7 +5,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/chenjinnian/bt_clean)](https://github.com/chenjinnian/bt_clean/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/chenjinnian/bt_clean)](https://github.com/chenjinnian/bt_clean/network/members)
 [![GitHub issues](https://img.shields.io/github/issues/chenjinnian/bt_clean)](https://github.com/chenjinnian/bt_clean/issues) 
-[![Github downloads](https://poser.pugx.org/w7corp/easywechat/downloads)](https://packagist.org/packages/w7corp/easywechat)
+[![Github downloads](https://poser.pugx.org/chenjinnian/bt_clean/downloads)](https://packagist.org/packages/chenjinnian/bt_clean)
 
 
 
