@@ -23,7 +23,7 @@
 
 6.去除自动校验文件与上报信息定时任务
 
-7.去除7.7版本过度搜集信息的功能，~~7.9.1版本以上不支持~~
+7.去除面板日志与网站绑定域名上报功能
 
 <br><br>
 
@@ -45,13 +45,23 @@
 
 <br>
 
-适用宝塔面板7.9版本的命令（7.9版本不支持去除强制绑定账号，新增去除面板首页广告）：  
+适用宝塔面板7.7以上版本的命令（7.9版本不支持去除强制绑定账号，新增去除面板首页广告）：  
 
 >github官方源：
 >>```wget -O optimize.sh https://raw.githubusercontent.com/chenjinnian/bt_clean/master/optimize_new.sh && bash optimize.sh```
 
 >第三方加速源：
 >>```wget -O optimize.sh https://raw.githubusercontents.com/chenjinnian/bt_clean/master/optimize_new.sh && bash optimize.sh```
+
+<br>
+
+适用于宝塔国际版aaPanel的命令：  
+
+>github官方源：
+>>```wget -O optimize.sh https://raw.githubusercontent.com/chenjinnian/bt_clean/master/optimize_aapanel.sh && bash optimize.sh```
+
+>第三方加速源：
+>>```wget -O optimize.sh https://raw.githubusercontents.com/chenjinnian/bt_clean/master/optimize_aapanel.sh && bash optimize.sh```
 
 
 ## 由 JetBrains 赞助

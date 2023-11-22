@@ -11,6 +11,11 @@ if [ ! -d /www/server/panel ] || [ ! -f /etc/init.d/bt ];then
 	exit 1
 fi 
 
+echo -e "=============================================================="
+echo -e "宝塔Linux面板优化脚本"
+echo -e "=============================================================="
+echo -e "适用面板版本：7.7"
+echo -e "=============================================================="
 
 if [ ! -f /www/server/panel/data/userInfo.json ]; then
 	echo "{\"uid\":1000,\"username\":\"admin\",\"serverid\":1}" > /www/server/panel/data/userInfo.json
@@ -43,6 +48,10 @@ sed -i "/p = threading.Thread(target=check_files_panel)/, /p.start()/d" /www/ser
 sed -i "/p = threading.Thread(target=check_panel_msg)/, /p.start()/d" /www/server/panel/task.py
 echo "已去除消息推送与文件校验."
 
+sed -i "/^logs_analysis()/d" /www/server/panel/script/site_task.py
+sed -i "s/run_thread(cloud_check_domain,(domain,))/return/" /www/server/panel/class/public.py
+echo "已去除面板日志与绑定域名上报."
+
 if [ ! -f /www/server/panel/data/not_recommend.pl ]; then
 	echo "True" > /www/server/panel/data/not_recommend.pl
 fi
@@ -51,17 +60,8 @@ if [ ! -f /www/server/panel/data/not_workorder.pl ]; then
 fi
 echo "已关闭活动推荐与在线客服."
 
-echo "" > /www/server/panel/script/site_task.py
-chattr +i /www/server/panel/script/site_task.py
-rm -rf /www/server/panel/logs/request/*
-chattr +i -R /www/server/panel/logs/request
-echo "已去除搜集信息模块."
-
 /etc/init.d/bt restart
 
-echo -e "=================================================================="
+echo -e "=============================================================="
 echo -e "\033[32m宝塔面板优化脚本执行完毕\033[0m"
-echo -e "=================================================================="
-echo  "适用宝塔面板版本：7.7"
-echo  "如需还原之前的样子，请在面板首页点击“修复”"
-echo -e "=================================================================="
+echo -e "=============================================================="
